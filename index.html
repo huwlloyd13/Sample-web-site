@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Cumberland Honey Co. | Raw Cumbrian Honey &amp; Beeswax</title>
+  <meta name="description" content="The Cumberland Honey Co. keeps bees across the Cumbrian countryside and sells raw, small-batch honey, honeycomb and beeswax goods. Meet our bees and the people behind the jars.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,4 90,27 90,73 50,96 10,73 10,27' fill='%23e0a526'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --honey: #e0a526;
+      --honey-deep: #b87a0b;
+      --amber: #8a4f06;
+      --cream: #fdf7ea;
+      --wax: #f6e8c6;
+      --ink: #2b1d0e;
+      --ink-soft: #5c4a36;
+      --fell: #3e4f47;
+      --fell-dark: #26322d;
+      --white: #ffffff;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(43, 29, 14, 0.12);
+      --max: 1140px;
+      --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--cream);
+    }
+
+    img, svg { display: block; max-width: 100%; }
+
+    h1, h2, h3 {
+      font-family: var(--serif);
+      line-height: 1.15;
+      margin: 0 0 0.5em;
+      color: var(--ink);
+    }
+    h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); }
+    h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); }
+    h3 { font-size: 1.35rem; }
+    p { margin: 0 0 1em; }
+
+    a { color: var(--amber); }
+    a:hover { color: var(--honey-deep); }
+
+    :focus-visible {
+      outline: 3px solid var(--honey);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 0;
+      background: var(--ink);
+      color: var(--white);
+      padding: 0.75rem 1rem;
+      z-index: 100;
+    }
+    .skip-link:focus { left: 1rem; top: 1rem; }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    section { padding: 5.5rem 0; }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--honey-deep);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-intro {
+      max-width: 680px;
+      margin-bottom: 3rem;
+    }
+    .section-intro p { color: var(--ink-soft); font-size: 1.125rem; }
+    .center { text-align: center; margin-left: auto; margin-right: auto; }
+
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 1.6rem;
+      border-radius: 999px;
+      border: 2px solid transparent;
+      font-weight: 700;
+      font-size: 1rem;
+      font-family: var(--sans);
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--honey); color: var(--ink); }
+    .btn-primary:hover { background: #ebb43c; color: var(--ink); }
+    .btn-outline { border-color: currentColor; color: var(--white); }
+    .btn-outline:hover { background: var(--white); color: var(--ink); }
+    .btn-dark { background: var(--ink); color: var(--white); }
+    .btn-dark:hover { background: var(--amber); color: var(--white); }
+
+    /* ---------- Header ---------- */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(253, 247, 234, 0.94);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(43, 29, 14, 0.08);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .brand:hover { color: var(--ink); }
+    .brand svg { width: 40px; height: 40px; }
+    .brand-name {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    .brand-name small {
+      display: block;
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--honey-deep);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 0;
+      padding: 0.5rem;
+      cursor: pointer;
+      color: var(--ink);
+    }
+    .nav-toggle svg { width: 28px; height: 28px; }
+
+    .site-nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      margin: 0;
+      padding: 0;
+    }
+    .site-nav a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.97rem;
+    }
+    .site-nav a:hover { color: var(--honey-deep); }
+    .site-nav a.btn-dark,
+    .site-nav a.btn-dark:hover { color: var(--white); }
+    .site-nav .btn { padding: 0.55rem 1.2rem; }
+
+    @media (max-width: 860px) {
+      .nav-toggle { display: block; }
+      .site-nav {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        border-bottom: 1px solid rgba(43, 29, 14, 0.1);
+        box-shadow: var(--shadow);
+        display: none;
+      }
+      .site-nav.open { display: block; }
+      .site-nav ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0.5rem 1.25rem 1.25rem;
+      }
+      .site-nav li a { display: block; padding: 0.8rem 0; }
+      .site-nav li + li { border-top: 1px solid rgba(43, 29, 14, 0.07); }
+      .site-nav .btn { text-align: center; margin-top: 0.75rem; }
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--fell-dark);
+      padding: 0;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .hero-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3rem;
+      align-items: center;
+      min-height: calc(100vh - 72px);
+      max-height: 860px;
+      padding-top: 4rem;
+      padding-bottom: 6rem;
+    }
+    .hero h1 { color: var(--white); }
+    .hero h1 em { font-style: italic; color: var(--honey); }
+    .hero .eyebrow { color: var(--honey); }
+    .hero-lede {
+      font-size: 1.2rem;
+      max-width: 34rem;
+      color: rgba(255, 255, 255, 0.88);
+      margin-bottom: 2rem;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+    .hero-jar { justify-self: center; width: min(100%, 360px); }
+    .hero-jar svg { filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.35)); }
+
+    .bee-fly { animation: buzz 6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .bee-fly.two { animation-duration: 7.5s; animation-delay: -2s; }
+    @keyframes buzz {
+      0%, 100% { transform: translate(0, 0) rotate(-4deg); }
+      25% { transform: translate(10px, -8px) rotate(3deg); }
+      50% { transform: translate(-6px, -14px) rotate(-2deg); }
+      75% { transform: translate(-10px, -4px) rotate(4deg); }
+    }
+
+    @media (max-width: 860px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        min-height: 0;
+        max-height: none;
+        padding-top: 3.5rem;
+        padding-bottom: 5rem;
+        text-align: center;
+      }
+      .hero-lede { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      .hero-jar { width: 220px; order: -1; }
+    }
+
+    /* ---------- Trust strip ---------- */
+    .strip {
+      background: var(--honey);
+      padding: 1.1rem 0;
+    }
+    .strip ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem 2.5rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--ink);
+    }
+    .strip li { display: flex; align-items: center; gap: 0.5rem; }
+    .strip li::before {
+      content: "";
+      width: 10px;
+      height: 11px;
+      background: var(--ink);
+      clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    }
+
+    /* ---------- About ---------- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .about-art {
+      background: var(--wax);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+    .about-copy p { color: var(--ink-soft); }
+    .about-copy blockquote {
+      margin: 1.75rem 0 0;
+      padding: 1.25rem 1.5rem;
+      border-left: 4px solid var(--honey);
+      background: var(--white);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--ink);
+    }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 4rem;
+    }
+    .value {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: 0 2px 0 rgba(43, 29, 14, 0.06);
+      border: 1px solid rgba(43, 29, 14, 0.07);
+    }
+    .value-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      background: var(--wax);
+      color: var(--amber);
+      clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+      margin-bottom: 1rem;
+    }
+    .value-icon svg { width: 24px; height: 24px; }
+    .value p { color: var(--ink-soft); margin: 0; font-size: 0.98rem; }
+
+    @media (max-width: 860px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .values { grid-template-columns: 1fr; }
+    }
+
+    /* ---------- Products ---------- */
+    .products { background: var(--wax); }
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 2.5rem;
+    }
+    .filter-bar button {
+      background: transparent;
+      border: 2px solid var(--ink);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 0.45rem 1.1rem;
+      font-weight: 700;
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .filter-bar button[aria-pressed="true"],
+    .filter-bar button:hover { background: var(--ink); color: var(--white); }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.75rem;
+    }
+    .product {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease;
+    }
+    .product:hover { transform: translateY(-4px); }
+    .product[hidden] { display: none; }
+    .product-art {
+      position: relative;
+      height: 210px;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at 50% 60%, #fff6dd 0%, #f3dca3 100%);
+    }
+    .product-art svg { height: 170px; width: auto; }
+    .tag {
+      position: absolute;
+      top: 0.9rem;
+      left: 0.9rem;
+      background: var(--ink);
+      color: var(--white);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+    }
+    .tag.seasonal { background: var(--fell); }
+    .product-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .product-body h3 { margin-bottom: 0.35rem; }
+    .product-body p { color: var(--ink-soft); font-size: 0.97rem; flex: 1; }
+    .product-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    .price {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-weight: 700;
+    }
+    .price small {
+      display: block;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--ink-soft);
+    }
+    .product .btn { padding: 0.6rem 1.1rem; font-size: 0.92rem; }
+
+    .products-note {
+      text-align: center;
+      margin-top: 2.5rem;
+      color: var(--ink-soft);
+    }
+
+    /* ---------- Bees ---------- */
+    .bees {
+      background: var(--fell-dark);
+      color: rgba(255, 255, 255, 0.88);
+      position: relative;
+      overflow: hidden;
+    }
+    .bees h2, .bees h3 { color: var(--white); }
+    .bees .eyebrow { color: var(--honey); }
+    .bees .section-intro p { color: rgba(255, 255, 255, 0.8); }
+
+    .bee-facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 4.5rem;
+    }
+    .fact {
+      text-align: center;
+      padding: 1.75rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .fact strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 2.6rem;
+      line-height: 1;
+      color: var(--honey);
+      margin-bottom: 0.5rem;
+    }
+    .fact span { font-size: 0.95rem; }
+
+    .apiaries {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 4.5rem;
+    }
+    .apiary {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .apiary svg { width: 100%; height: 150px; }
+    .apiary-body { padding: 1.4rem 1.5rem 1.6rem; }
+    .apiary-body p { margin: 0; font-size: 0.97rem; }
+    .apiary-body .forage {
+      display: block;
+      margin-top: 0.8rem;
+      font-size: 0.85rem;
+      color: var(--honey);
+      font-weight: 600;
+    }
+
+    .seasons-head { margin-bottom: 1.5rem; }
+    .seasons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      counter-reset: season;
+      position: relative;
+    }
+    .season {
+      position: relative;
+      padding: 2.75rem 1.25rem 0 0;
+    }
+    .season::before {
+      content: "";
+      position: absolute;
+      top: 0.65rem;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: rgba(224, 165, 38, 0.4);
+    }
+    .season::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 22px;
+      height: 24px;
+      background: var(--honey);
+      clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    }
+    .season h3 { font-size: 1.15rem; margin-bottom: 0.35rem; }
+    .season .months {
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--honey);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    .season p { font-size: 0.95rem; margin: 0; }
+
+    .adopt {
+      margin-top: 4.5rem;
+      background: var(--honey);
+      color: var(--ink);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+    .adopt h3 { color: var(--ink); font-size: 1.7rem; }
+    .adopt p { margin: 0; }
+
+    @media (max-width: 960px) {
+      .bee-facts { grid-template-columns: repeat(2, 1fr); }
+      .apiaries { grid-template-columns: 1fr; }
+      .seasons { grid-template-columns: 1fr 1fr; row-gap: 2rem; }
+    }
+    @media (max-width: 560px) {
+      .seasons { grid-template-columns: 1fr; }
+      .adopt { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
+    }
+
+    /* ---------- Team ---------- */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .person { text-align: center; }
+    .avatar {
+      width: 150px;
+      height: 165px;
+      margin: 0 auto 1.25rem;
+      clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+      background: var(--wax);
+      display: grid;
+      place-items: center;
+    }
+    .avatar svg { width: 92px; height: 92px; }
+    .person .role {
+      display: block;
+      color: var(--honey-deep);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .person p { color: var(--ink-soft); font-size: 0.98rem; max-width: 22rem; margin: 0 auto; }
+
+    @media (max-width: 860px) {
+      .team-grid { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    /* ---------- Testimonials ---------- */
+    .reviews { background: var(--wax); }
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .review {
+      margin: 0;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+    }
+    .stars { color: var(--honey-deep); letter-spacing: 0.15em; margin-bottom: 0.75rem; }
+    .review blockquote {
+      margin: 0 0 1rem;
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-style: italic;
+    }
+    .review figcaption { font-weight: 700; font-size: 0.92rem; color: var(--ink-soft); }
+
+    @media (max-width: 860px) {
+      .review-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ---------- Find us / Contact ---------- */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 3.5rem;
+    }
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem;
+    }
+    .info-list li {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(43, 29, 14, 0.1);
+    }
+    .info-list svg { width: 22px; height: 22px; flex-shrink: 0; color: var(--honey-deep); margin-top: 0.2rem; }
+    .info-list strong { display: block; }
+    .info-list span { color: var(--ink-soft); }
+
+    .contact-form {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2.25rem;
+      box-shadow: var(--shadow);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .field { margin-bottom: 1.1rem; }
+    .field label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.92rem;
+      margin-bottom: 0.35rem;
+    }
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 0.75rem 0.9rem;
+      font: inherit;
+      font-size: 1rem;
+      color: var(--ink);
+      background: var(--cream);
+      border: 1.5px solid rgba(43, 29, 14, 0.2);
+      border-radius: 10px;
+    }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--honey-deep);
+      box-shadow: 0 0 0 3px rgba(224, 165, 38, 0.3);
+    }
+    .field textarea { min-height: 130px; resize: vertical; }
+    .form-note { font-size: 0.85rem; color: var(--ink-soft); margin: 1rem 0 0; }
+
+    @media (max-width: 860px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .contact-form { padding: 1.5rem; }
+    }
+
+    /* ---------- Newsletter ---------- */
+    .newsletter {
+      background: var(--honey);
+      padding: 3.5rem 0;
+    }
+    .newsletter-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .newsletter h2 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+    .newsletter p { margin: 0; }
+    .newsletter form { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .newsletter input {
+      padding: 0.8rem 1.1rem;
+      border-radius: 999px;
+      border: 2px solid var(--ink);
+      font: inherit;
+      min-width: 260px;
+      background: var(--cream);
+    }
+    @media (max-width: 560px) {
+      .newsletter form, .newsletter input { width: 100%; min-width: 0; }
+      .newsletter .btn { width: 100%; }
+    }
+
+    /* ---------- Footer ---------- */
+    .site-footer {
+      background: var(--ink);
+      color: rgba(255, 255, 255, 0.75);
+      padding: 4rem 0 2rem;
+      font-size: 0.95rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    .site-footer .brand,
+    .site-footer .brand:hover { color: var(--white); }
+    .site-footer h4 {
+      color: var(--white);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin: 0 0 1rem;
+    }
+    .site-footer ul { list-style: none; margin: 0; padding: 0; }
+    .site-footer li { margin-bottom: 0.5rem; }
+    .site-footer a { color: rgba(255, 255, 255, 0.75); text-decoration: none; }
+    .site-footer a:hover { color: var(--honey); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.85rem;
+    }
+    @media (max-width: 860px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 520px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Reusable SVG symbols -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="bee" viewBox="0 0 64 64">
+        <ellipse cx="22" cy="20" rx="12" ry="8" fill="#ffffff" opacity="0.85" transform="rotate(-30 22 20)"/>
+        <ellipse cx="38" cy="18" rx="12" ry="8" fill="#ffffff" opacity="0.85" transform="rotate(25 38 18)"/>
+        <ellipse cx="32" cy="38" rx="17" ry="13" fill="#f2b632"/>
+        <path d="M24 26.5 Q22 38 24 49.5" stroke="#2b1d0e" stroke-width="5" fill="none"/>
+        <path d="M33 25 Q31 38 33 51" stroke="#2b1d0e" stroke-width="5" fill="none"/>
+        <circle cx="48" cy="36" r="7" fill="#2b1d0e"/>
+        <path d="M15 38 L9 38" stroke="#2b1d0e" stroke-width="3" stroke-linecap="round"/>
+        <path d="M51 30 Q55 22 60 22 M49 30 Q50 21 54 18" stroke="#2b1d0e" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="hex" viewBox="0 0 100 100">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="The Cumberland Honey Co. home">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <use href="#hex" fill="#e0a526"/>
+          <use href="#bee" x="20" y="20" width="60" height="60"/>
+        </svg>
+        <span class="brand-name">The Cumberland<small>Honey Co.</small></span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18"/>
+        </svg>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#bees">Our Bees</a></li>
+          <li><a href="#team">Who We Are</a></li>
+          <li><a href="#visit">Find Us</a></li>
+          <li><a class="btn btn-dark" href="#contact">Order &amp; Enquire</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="top">
+      <svg class="hero-bg" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1d2723"/>
+            <stop offset="0.6" stop-color="#34433c"/>
+            <stop offset="1" stop-color="#7a6a3e"/>
+          </linearGradient>
+          <pattern id="comb" width="56" height="97" patternUnits="userSpaceOnUse" patternTransform="scale(0.7)">
+            <path d="M28 0 L56 16 L56 48 L28 64 L0 48 L0 16 Z M28 64 L28 97" fill="none" stroke="#e0a526" stroke-opacity="0.08" stroke-width="2"/>
+          </pattern>
+        </defs>
+        <rect width="1440" height="800" fill="url(#sky)"/>
+        <rect width="1440" height="800" fill="url(#comb)"/>
+        <circle cx="1120" cy="250" r="90" fill="#e0a526" opacity="0.18"/>
+        <circle cx="1120" cy="250" r="55" fill="#f2c45a" opacity="0.35"/>
+        <path d="M0 560 L180 430 L320 500 L520 360 L700 470 L860 390 L1040 480 L1240 380 L1440 470 L1440 800 L0 800 Z" fill="#2c3a33"/>
+        <path d="M0 640 L220 540 L420 610 L640 520 L880 600 L1100 530 L1300 590 L1440 560 L1440 800 L0 800 Z" fill="#3e4f47"/>
+        <path d="M0 720 Q360 640 720 700 T1440 680 L1440 800 L0 800 Z" fill="#6b5a2c"/>
+        <g fill="#8e6a9e" opacity="0.55">
+          <circle cx="90" cy="735" r="5"/><circle cx="130" cy="742" r="4"/><circle cx="260" cy="722" r="5"/>
+          <circle cx="400" cy="728" r="4"/><circle cx="520" cy="716" r="5"/><circle cx="880" cy="722" r="4"/>
+          <circle cx="1010" cy="708" r="5"/><circle cx="1200" cy="712" r="4"/><circle cx="1340" cy="700" r="5"/>
+        </g>
+      </svg>
+
+      <div class="container hero-inner">
+        <div>
+          <span class="eyebrow">Raw honey from the Cumbrian fells</span>
+          <h1>Honey with a sense of <em>place</em>.</h1>
+          <p class="hero-lede">We keep bees in the meadows, orchards and heather moors of old Cumberland, and jar their honey by hand, never heat-treated, never blended, just as the bees made it.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#shop">Shop our honey</a>
+            <a class="btn btn-outline" href="#bees">Meet the bees</a>
+          </div>
+        </div>
+
+        <div class="hero-jar" aria-hidden="true">
+          <svg viewBox="0 0 320 380">
+            <defs>
+              <linearGradient id="honeyFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f6c24a"/>
+                <stop offset="1" stop-color="#b8700a"/>
+              </linearGradient>
+              <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
+                <stop offset="0.25" stop-color="#ffffff" stop-opacity="0.05"/>
+                <stop offset="1" stop-color="#ffffff" stop-opacity="0.15"/>
+              </linearGradient>
+            </defs>
+            <rect x="85" y="60" width="150" height="40" rx="8" fill="#3e4f47"/>
+            <rect x="80" y="48" width="160" height="22" rx="6" fill="#26322d"/>
+            <path d="M70 100 Q60 100 60 120 L60 330 Q60 360 90 360 L230 360 Q260 360 260 330 L260 120 Q260 100 250 100 Z" fill="url(#honeyFill)"/>
+            <path d="M70 100 Q60 100 60 120 L60 330 Q60 360 90 360 L230 360 Q260 360 260 330 L260 120 Q260 100 250 100 Z" fill="url(#glass)"/>
+            <rect x="84" y="170" width="152" height="120" rx="6" fill="#fdf7ea"/>
+            <text x="160" y="203" text-anchor="middle" font-family="Georgia, serif" font-size="13" letter-spacing="2" fill="#b87a0b">THE CUMBERLAND</text>
+            <text x="160" y="238" text-anchor="middle" font-family="Georgia, serif" font-size="30" font-style="italic" fill="#2b1d0e">Honey Co.</text>
+            <line x1="110" y1="254" x2="210" y2="254" stroke="#e0a526" stroke-width="2"/>
+            <text x="160" y="276" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" letter-spacing="1.5" fill="#5c4a36">RAW WILDFLOWER</text>
+            <path d="M80 120 Q76 200 82 320" stroke="#ffffff" stroke-opacity="0.5" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <g class="bee-fly"><use href="#bee" x="232" y="10" width="64" height="64"/></g>
+            <g class="bee-fly two"><use href="#bee" x="12" y="150" width="44" height="44"/></g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STRIP ================= -->
+    <div class="strip">
+      <div class="container">
+        <ul>
+          <li>Raw &amp; unpasteurised</li>
+          <li>Single-origin Cumbrian hives</li>
+          <li>Hand-jarred in small batches</li>
+          <li>Plastic-free packaging</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-art" aria-hidden="true">
+            <svg viewBox="0 0 400 320">
+              <g fill="#e0a526">
+                <use href="#hex" x="40"  y="20"  width="90" height="90"/>
+                <use href="#hex" x="118" y="20"  width="90" height="90" opacity="0.75"/>
+                <use href="#hex" x="196" y="20"  width="90" height="90"/>
+                <use href="#hex" x="274" y="20"  width="90" height="90" opacity="0.55"/>
+                <use href="#hex" x="1"   y="88"  width="90" height="90" opacity="0.6"/>
+                <use href="#hex" x="79"  y="88"  width="90" height="90"/>
+                <use href="#hex" x="157" y="88"  width="90" height="90" opacity="0.85"/>
+                <use href="#hex" x="235" y="88"  width="90" height="90"/>
+                <use href="#hex" x="313" y="88"  width="90" height="90" opacity="0.7"/>
+                <use href="#hex" x="40"  y="156" width="90" height="90" opacity="0.9"/>
+                <use href="#hex" x="118" y="156" width="90" height="90"/>
+                <use href="#hex" x="196" y="156" width="90" height="90" opacity="0.65"/>
+                <use href="#hex" x="274" y="156" width="90" height="90"/>
+                <use href="#hex" x="79"  y="224" width="90" height="90" opacity="0.5"/>
+                <use href="#hex" x="157" y="224" width="90" height="90"/>
+                <use href="#hex" x="235" y="224" width="90" height="90" opacity="0.8"/>
+              </g>
+              <use href="#bee" x="150" y="96" width="76" height="76"/>
+              <use href="#bee" x="290" y="200" width="52" height="52"/>
+              <use href="#bee" x="40" y="40" width="44" height="44"/>
+            </svg>
+          </div>
+
+          <div class="about-copy">
+            <span class="eyebrow">Our story</span>
+            <h2>Small hives, big skies, honest honey.</h2>
+            <p>The Cumberland Honey Co. began with a single hive at the bottom of a garden and a lot of curiosity. A few seasons (and a few stings) later, we look after colonies spread across the northern edge of the Lake District, from the Solway plain to the high heather moors.</p>
+            <p>Every jar we sell comes from our own bees. We don't buy in, blend, or heat our honey. That means each harvest tastes a little different, depending on the weather, the flowers and the hives it came from. We think that's the whole point.</p>
+            <p>Beyond the honey, we're here to look after bees. We work with local farmers and landowners to plant forage, leave field margins wild, and keep our colonies healthy without cutting corners.</p>
+            <blockquote>"Look after the bees, and the honey looks after itself."</blockquote>
+          </div>
+        </div>
+
+        <div class="values">
+          <article class="value">
+            <div class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9zM12 22c-4.97 0-9-4.03-9-9 4.97 0 9 4.03 9 9zM12 13V2M12 6l3-3M12 6 9 3"/></svg>
+            </div>
+            <h3>Raw &amp; real</h3>
+            <p>Gently strained and jarred straight from the comb. No heating, no filtering out the good bits, nothing added.</p>
+          </article>
+          <article class="value">
+            <div class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l6-10 4 6 3-4 5 8z"/><circle cx="17" cy="6" r="2"/></svg>
+            </div>
+            <h3>Rooted in Cumbria</h3>
+            <p>Every hive lives within the old county of Cumberland, so every jar tells you exactly where it's from.</p>
+          </article>
+          <article class="value">
+            <div class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+            </div>
+            <h3>Bees come first</h3>
+            <p>We only take surplus honey, always leaving the bees plenty to see them through a long northern winter.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SHOP ================= -->
+    <section class="products" id="shop">
+      <div class="container">
+        <div class="section-intro center">
+          <span class="eyebrow">The shop</span>
+          <h2>From our hives to your table</h2>
+          <p>Small-batch honey and beeswax goods, made in limited quantities each season. When it's gone, it's gone until next year.</p>
+        </div>
+
+        <div class="filter-bar" role="group" aria-label="Filter products">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="honey" aria-pressed="false">Honey</button>
+          <button type="button" data-filter="comb" aria-pressed="false">Honeycomb</button>
+          <button type="button" data-filter="wax" aria-pressed="false">Beeswax</button>
+          <button type="button" data-filter="gift" aria-pressed="false">Gifts</button>
+        </div>
+
+        <div class="product-grid">
+
+          <article class="product" data-category="honey">
+            <div class="product-art" aria-hidden="true">
+              <span class="tag">Bestseller</span>
+              <svg viewBox="0 0 120 150">
+                <rect x="30" y="8" width="60" height="16" rx="4" fill="#3e4f47"/>
+                <path d="M26 26 h68 q8 0 8 10 v96 q0 12 -12 12 h-60 q-12 0 -12 -12 v-96 q0 -10 8 -10z" fill="#e8a628"/>
+                <rect x="32" y="60" width="56" height="46" rx="3" fill="#fdf7ea"/>
+                <text x="60" y="80" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#2b1d0e">Wildflower</text>
+                <use href="#hex" x="54" y="86" width="12" height="12" fill="#e0a526"/>
+              </svg>
+            </div>
+            <div class="product-body">
+              <h3>Cumbrian Wildflower Honey</h3>
+              <p>Our everyday favourite. A bright, floral runny honey from clover, bramble and hedgerow blossom across the summer meadows.</p>
+              <div class="product-meta">
+                <span class="price">£8.50<small>340g jar</small></span>
+                <a class="btn btn-dark" href="#contact" data-product="Cumbrian Wildflower Honey (340g)">Order</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product" data-category="honey">
+            <div class="product-art" aria-hidden="true">
+              <span class="tag seasonal">Limited</span>
+              <svg viewBox="0 0 120 150">
+                <rect x="30" y="8" width="60" height="16" rx="4" fill="#5b3f6b"/>
+                <path d="M26 26 h68 q8 0 8 10 v96 q0 12 -12 12 h-60 q-12 0 -12 -12 v-96 q0 -10 8 -10z" fill="#9c5a10"/>
+                <rect x="32" y="60" width="56" height="46" rx="3" fill="#fdf7ea"/>
+                <text x="60" y="80" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#2b1d0e">Heather</text>
+                <use href="#hex" x="54" y="86" width="12" height="12" fill="#8e6a9e"/>
+              </svg>
+            </div>
+            <div class="product-body">
+              <h3>Fell Heather Honey</h3>
+              <p>Gathered in late summer when the moors turn purple. Rich, smoky and gloriously thick: a true taste of the high fells.</p>
+              <div class="product-meta">
+                <span class="price">£12.00<small>227g jar</small></span>
+                <a class="btn btn-dark" href="#contact" data-product="Fell Heather Honey (227g)">Order</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product" data-category="honey">
+            <div class="product-art" aria-hidden="true">
+              <svg viewBox="0 0 120 150">
+                <rect x="30" y="8" width="60" height="16" rx="4" fill="#3e4f47"/>
+                <path d="M26 26 h68 q8 0 8 10 v96 q0 12 -12 12 h-60 q-12 0 -12 -12 v-96 q0 -10 8 -10z" fill="#f3d48a"/>
+                <rect x="32" y="60" width="56" height="46" rx="3" fill="#fdf7ea"/>
+                <text x="60" y="80" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#2b1d0e">Set Honey</text>
+                <use href="#hex" x="54" y="86" width="12" height="12" fill="#e0a526"/>
+              </svg>
+            </div>
+            <div class="product-body">
+              <h3>Creamed Spring Honey</h3>
+              <p>Early-season honey from orchard blossom and dandelion, gently stirred into a smooth, spreadable set. Perfect on hot toast.</p>
+              <div class="product-meta">
+                <span class="price">£8.00<small>340g jar</small></span>
+                <a class="btn btn-dark" href="#contact" data-product="Creamed Spring Honey (340g)">Order</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product" data-category="comb gift">
+            <div class="product-art" aria-hidden="true">
+              <span class="tag seasonal">Seasonal</span>
+              <svg viewBox="0 0 150 130">
+                <rect x="8" y="10" width="134" height="110" rx="8" fill="#ffffff" stroke="#d9c7a0" stroke-width="2"/>
+                <g fill="#e8a628" stroke="#c98a14" stroke-width="1.5">
+                  <use href="#hex" x="18" y="18" width="30" height="30"/><use href="#hex" x="45" y="18" width="30" height="30"/>
+                  <use href="#hex" x="72" y="18" width="30" height="30"/><use href="#hex" x="99" y="18" width="30" height="30"/>
+                  <use href="#hex" x="31" y="41" width="30" height="30"/><use href="#hex" x="58" y="41" width="30" height="30"/>
+                  <use href="#hex" x="85" y="41" width="30" height="30"/><use href="#hex" x="112" y="41" width="30" height="30"/>
+                  <use href="#hex" x="18" y="64" width="30" height="30"/><use href="#hex" x="45" y="64" width="30" height="30"/>
+                  <use href="#hex" x="72" y="64" width="30" height="30"/><use href="#hex" x="99" y="64" width="30" height="30"/>
+                  <use href="#hex" x="31" y="87" width="30" height="30"/><use href="#hex" x="58" y="87" width="30" height="30"/>
+                  <use href="#hex" x="85" y="87" width="30" height="30"/>
+                </g>
+              </svg>
+            </div>
+            <div class="product-body">
+              <h3>Cut Honeycomb</h3>
+              <p>Honey exactly as the bees sealed it, in its own wax comb. Chewy, sweet and a showstopper on a cheeseboard.</p>
+              <div class="product-meta">
+                <span class="price">£11.00<small>approx. 200g</small></span>
+                <a class="btn btn-dark" href="#contact" data-product="Cut Honeycomb (200g)">Order</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product" data-category="wax gift">
+            <div class="product-art" aria-hidden="true">
+              <svg viewBox="0 0 140 150">
+                <path d="M70 6 q8 14 0 26 q-8 -12 0 -26z" fill="#f29b1e"/>
+                <line x1="70" y1="32" x2="70" y2="42" stroke="#2b1d0e" stroke-width="2"/>
+                <rect x="44" y="42" width="52" height="96" rx="4" fill="#f2cf6a"/>
+                <g stroke="#d9a93a" stroke-width="1.5" fill="none">
+                  <path d="M44 58 h52 M44 74 h52 M44 90 h52 M44 106 h52 M44 122 h52"/>
+                </g>
+                <rect x="94" y="88" width="34" height="50" rx="3" fill="#f2cf6a"/>
+                <path d="M111 72 q5 9 0 16 q-5 -7 0 -16z" fill="#f29b1e"/>
+                <rect x="12" y="98" width="34" height="40" rx="3" fill="#f6dc8e"/>
+              </svg>
+            </div>
+            <div class="product-body">
+              <h3>Pure Beeswax Candles</h3>
+              <p>Hand-poured from our own cappings wax. They burn slow and clean, with a soft honey scent. Pillar and dinner styles available.</p>
+              <div class="product-meta">
+                <span class="price">from £6.00<small>per candle</small></span>
+                <a class="btn btn-dark" href="#contact" data-product="Beeswax Candles">Order</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product" data-category="gift">
+            <div class="product-art" aria-hidden="true">
+              <span class="tag">Gift idea</span>
+              <svg viewBox="0 0 160 140">
+                <path d="M14 56 h132 v74 q0 6 -6 6 h-120 q-6 0 -6 -6z" fill="#c9a26b"/>
+                <path d="M14 56 h132 l-10 -14 h-112z" fill="#a9824b"/>
+                <rect x="34" y="20" width="30" height="40" rx="4" fill="#e8a628"/>
+                <rect x="38" y="12" width="22" height="9" rx="2" fill="#3e4f47"/>
+                <rect x="70" y="26" width="26" height="34" rx="4" fill="#9c5a10"/>
+                <rect x="74" y="19" width="18" height="8" rx="2" fill="#5b3f6b"/>
+                <rect x="102" y="30" width="16" height="30" rx="2" fill="#f2cf6a"/>
+                <path d="M110 18 q4 7 0 12 q-4 -5 0 -12z" fill="#f29b1e"/>
+                <path d="M14 82 h132" stroke="#8a4f06" stroke-width="6"/>
+                <circle cx="80" cy="82" r="9" fill="#8a4f06"/>
+              </svg>
+            </div>
+            <div class="product-body">
+              <h3>The Cumberland Hamper</h3>
+              <p>Wildflower and heather honey, a beeswax candle and a wooden dipper, wrapped and ready to give. We can add a handwritten note.</p>
+              <div class="product-meta">
+                <span class="price">£34.00<small>gift box</small></span>
+                <a class="btn btn-dark" href="#contact" data-product="The Cumberland Hamper">Order</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="products-note">Collection, local delivery and UK postage available. Trade &amp; wholesale enquiries welcome. <a href="#contact">Get in touch</a>.</p>
+      </div>
+    </section>
+
+    <!-- ================= BEES ================= -->
+    <section class="bees" id="bees">
+      <div class="container">
+        <div class="section-intro">
+          <span class="eyebrow">Meet the bees</span>
+          <h2>The real workers behind every jar</h2>
+          <p>Our colonies are hardy, dark, locally-adapted honey bees, well suited to Cumbrian weather: they fly in cooler temperatures, winter well and make the most of a short northern summer.</p>
+        </div>
+
+        <div class="bee-facts">
+          <div class="fact"><strong>50k</strong><span>bees in a strong hive at the height of summer</span></div>
+          <div class="fact"><strong>1/12</strong><span>teaspoon of honey made by one worker bee in her lifetime</span></div>
+          <div class="fact"><strong>3 mi</strong><span>how far our foragers will fly to find flowers</span></div>
+          <div class="fact"><strong>1</strong><span>queen per colony, laying up to 1,500 eggs a day</span></div>
+        </div>
+
+        <h3 class="seasons-head">Where our hives live</h3>
+        <div class="apiaries" style="margin-top:1.5rem">
+          <article class="apiary">
+            <svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="300" height="150" fill="#7fa4a0"/>
+              <path d="M0 95 Q150 70 300 95 V150 H0z" fill="#6d8f4e"/>
+              <g fill="#f6f1df"><circle cx="30" cy="110" r="3"/><circle cx="70" cy="120" r="3"/><circle cx="120" cy="105" r="3"/><circle cx="200" cy="118" r="3"/><circle cx="250" cy="108" r="3"/></g>
+              <g fill="#e66e8e"><circle cx="50" cy="125" r="3"/><circle cx="160" cy="128" r="3"/><circle cx="230" cy="132" r="3"/></g>
+              <rect x="125" y="78" width="50" height="34" fill="#fdf7ea"/><rect x="120" y="70" width="60" height="10" fill="#3e4f47"/>
+              <path d="M125 90 h50 M125 101 h50" stroke="#d9c7a0" stroke-width="2"/>
+            </svg>
+            <div class="apiary-body">
+              <h3>The Meadow Apiary</h3>
+              <p>Tucked into hay meadows on the Solway plain, where our wildflower honey begins.</p>
+              <span class="forage">Clover · bramble · knapweed · hawthorn</span>
+            </div>
+          </article>
+          <article class="apiary">
+            <svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="300" height="150" fill="#a8bfc0"/>
+              <path d="M0 105 H300 V150 H0z" fill="#7f9a55"/>
+              <g><rect x="48" y="70" width="8" height="40" fill="#6b4a2b"/><circle cx="52" cy="60" r="26" fill="#8fae5a"/>
+                <g fill="#ffffff"><circle cx="40" cy="55" r="3"/><circle cx="58" cy="48" r="3"/><circle cx="62" cy="66" r="3"/><circle cx="45" cy="70" r="3"/></g></g>
+              <g><rect x="238" y="70" width="8" height="40" fill="#6b4a2b"/><circle cx="242" cy="60" r="26" fill="#8fae5a"/>
+                <g fill="#f8d4df"><circle cx="230" cy="52" r="3"/><circle cx="250" cy="50" r="3"/><circle cx="256" cy="66" r="3"/><circle cx="236" cy="70" r="3"/></g></g>
+              <rect x="125" y="80" width="50" height="34" fill="#fdf7ea"/><rect x="120" y="72" width="60" height="10" fill="#3e4f47"/>
+              <path d="M125 92 h50 M125 103 h50" stroke="#d9c7a0" stroke-width="2"/>
+            </svg>
+            <div class="apiary-body">
+              <h3>The Orchard Apiary</h3>
+              <p>Among old apple and damson trees in the Eden Valley, where spring arrives early.</p>
+              <span class="forage">Apple · damson · dandelion · sycamore</span>
+            </div>
+          </article>
+          <article class="apiary">
+            <svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="300" height="150" fill="#9fb0b8"/>
+              <path d="M0 80 L70 40 L130 70 L200 30 L300 75 V150 H0z" fill="#566a63"/>
+              <path d="M0 110 Q150 90 300 110 V150 H0z" fill="#8e6a9e"/>
+              <g fill="#b48cc4"><circle cx="20" cy="125" r="5"/><circle cx="60" cy="130" r="5"/><circle cx="100" cy="122" r="5"/><circle cx="200" cy="128" r="5"/><circle cx="260" cy="124" r="5"/><circle cx="285" cy="135" r="5"/></g>
+              <rect x="125" y="86" width="50" height="34" fill="#fdf7ea"/><rect x="120" y="78" width="60" height="10" fill="#3e4f47"/>
+              <path d="M125 98 h50 M125 109 h50" stroke="#d9c7a0" stroke-width="2"/>
+            </svg>
+            <div class="apiary-body">
+              <h3>The Heather Moor</h3>
+              <p>Each August we carry selected hives up to the fell-side heather for the late-summer flow.</p>
+              <span class="forage">Ling heather · bell heather · bilberry</span>
+            </div>
+          </article>
+        </div>
+
+        <h3 class="seasons-head">A year in the hive</h3>
+        <div class="seasons">
+          <div class="season">
+            <span class="months">Mar – May</span>
+            <h3>Spring build-up</h3>
+            <p>The queen ramps up laying, colonies grow fast on willow, blossom and dandelion, and we watch closely for swarming.</p>
+          </div>
+          <div class="season">
+            <span class="months">Jun – Jul</span>
+            <h3>Summer flow</h3>
+            <p>Meadows are in full bloom and foragers bring in nectar by the bucketload. Our first honey harvest happens now.</p>
+          </div>
+          <div class="season">
+            <span class="months">Aug – Sep</span>
+            <h3>Heather &amp; harvest</h3>
+            <p>Hives head up to the moors for heather. Back home, we extract, strain and jar the year's honey by hand.</p>
+          </div>
+          <div class="season">
+            <span class="months">Oct – Feb</span>
+            <h3>Winter cluster</h3>
+            <p>The bees huddle together on their stores to keep warm. We leave them in peace, and render wax for candles.</p>
+          </div>
+        </div>
+
+        <div class="adopt">
+          <div>
+            <h3>Adopt a hive</h3>
+            <p>Support one of our colonies for a year. You'll get seasonal updates and photos from "your" hive, a certificate, and a share of its honey at harvest time. A lovely gift for bee lovers.</p>
+          </div>
+          <a class="btn btn-dark" href="#contact" data-product="Adopt a Hive">Find out more</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TEAM ================= -->
+    <section id="team">
+      <div class="container">
+        <div class="section-intro center">
+          <span class="eyebrow">Who we are</span>
+          <h2>A small team with a lot of bees</h2>
+          <p>We're a family-run business based in Cumbria. Between us we do everything: keeping the bees, jarring the honey, pouring the candles and packing your orders.</p>
+        </div>
+
+        <div class="team-grid">
+          <article class="person">
+            <div class="avatar" aria-hidden="true">
+              <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="38" r="20" fill="#c99a6b"/>
+                <path d="M18 100 q0 -34 32 -34 q32 0 32 34z" fill="#3e4f47"/>
+                <path d="M26 34 q24 -30 48 0 v-4 q-24 -26 -48 0z" fill="#fdf7ea"/>
+                <rect x="24" y="30" width="52" height="6" rx="3" fill="#fdf7ea"/>
+              </svg>
+            </div>
+            <h3>[Name]</h3>
+            <span class="role">Founder &amp; Head Beekeeper</span>
+            <p>Started with one hive and never looked back. Happiest in a bee suit on a warm June afternoon, and in charge of every colony we keep.</p>
+          </article>
+          <article class="person">
+            <div class="avatar" aria-hidden="true">
+              <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="38" r="20" fill="#e0b48c"/>
+                <path d="M18 100 q0 -34 32 -34 q32 0 32 34z" fill="#b87a0b"/>
+                <path d="M30 34 q0 -24 20 -24 q20 0 20 24 q-6 -12 -20 -12 q-14 0 -20 12z" fill="#5c3a1e"/>
+              </svg>
+            </div>
+            <h3>[Name]</h3>
+            <span class="role">Honey House &amp; Candles</span>
+            <p>Runs the honey house: extracting, straining and jarring each batch by hand, and turning our beeswax into candles.</p>
+          </article>
+          <article class="person">
+            <div class="avatar" aria-hidden="true">
+              <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="38" r="20" fill="#a87b55"/>
+                <path d="M18 100 q0 -34 32 -34 q32 0 32 34z" fill="#5b3f6b"/>
+                <path d="M30 32 q2 -20 20 -20 q18 0 20 20 q-10 -6 -20 -6 q-10 0 -20 6z" fill="#2b1d0e"/>
+              </svg>
+            </div>
+            <h3>[Name]</h3>
+            <span class="role">Shop, Markets &amp; Orders</span>
+            <p>The friendly face at our market stall and the person who packs your parcel. Ask about the hives: you'll get a story.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= REVIEWS ================= -->
+    <section class="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section-intro center">
+          <span class="eyebrow">Kind words</span>
+          <h2 id="reviews-title">What our customers say</h2>
+        </div>
+        <div class="review-grid">
+          <figure class="review">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"The heather honey is extraordinary, unlike anything from a supermarket. We're already on our third jar."</blockquote>
+            <figcaption>[Customer name], [Town]</figcaption>
+          </figure>
+          <figure class="review">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"Adopted a hive for my dad's birthday. He loves the updates and still talks about the honey."</blockquote>
+            <figcaption>[Customer name], [Town]</figcaption>
+          </figure>
+          <figure class="review">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"Lovely people, lovely honey. Great to know exactly where it comes from."</blockquote>
+            <figcaption>[Customer name], [Town]</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VISIT / CONTACT ================= -->
+    <section id="visit">
+      <div class="container contact-grid">
+        <div>
+          <span class="eyebrow">Find us</span>
+          <h2>Come and say hello</h2>
+          <p style="color:var(--ink-soft)">Pick up a jar at one of our local markets, collect from the honey house by arrangement, or order below and we'll post it to you.</p>
+
+          <ul class="info-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <div><strong>The Honey House</strong><span>[Address line], Cumbria [Postcode]<br>Collection by appointment</span></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1-5h16l1 5M4 9v11h16V9M3 9h18M9 20v-6h6v6"/></svg>
+              <div><strong>Markets &amp; stockists</strong><span>[Market name] – [day / frequency]<br>[Farm shop / stockist name]</span></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              <div><strong>Email</strong><span><a href="mailto:hello@cumberlandhoney.co.uk">hello@cumberlandhoney.co.uk</a></span></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+              <div><strong>Phone</strong><span>[Phone number]</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <form class="contact-form" id="contact" novalidate>
+          <h3>Order or enquire</h3>
+          <p style="color:var(--ink-soft);font-size:0.97rem">Tell us what you'd like and we'll reply with availability, delivery options and how to pay.</p>
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="interest">I'm interested in</label>
+            <select id="interest" name="interest">
+              <option>General enquiry</option>
+              <option>Cumbrian Wildflower Honey (340g)</option>
+              <option>Fell Heather Honey (227g)</option>
+              <option>Creamed Spring Honey (340g)</option>
+              <option>Cut Honeycomb (200g)</option>
+              <option>Beeswax Candles</option>
+              <option>The Cumberland Hamper</option>
+              <option>Adopt a Hive</option>
+              <option>Trade / wholesale</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Quantities, delivery postcode, questions about the bees…"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Send enquiry</button>
+          <p class="form-note">This opens your email app with your message ready to send.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ================= NEWSLETTER ================= -->
+    <section class="newsletter" aria-labelledby="news-title">
+      <div class="container newsletter-inner">
+        <div>
+          <h2 id="news-title">News from the hives</h2>
+          <p>Harvest dates, new batches and the odd bee story. A few emails a year, never spam.</p>
+        </div>
+        <form id="newsletter-form">
+          <label for="news-email" class="visually-hidden">Email address</label>
+          <input id="news-email" type="email" placeholder="your@email.com" required>
+          <button class="btn btn-dark" type="submit">Sign me up</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="#top">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <use href="#hex" fill="#e0a526"/>
+              <use href="#bee" x="20" y="20" width="60" height="60"/>
+            </svg>
+            <span class="brand-name">The Cumberland<small>Honey Co.</small></span>
+          </a>
+          <p style="margin-top:1rem;max-width:20rem">Raw, single-origin honey and beeswax goods from our own hives in Cumbria.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#bees">Our Bees</a></li>
+            <li><a href="#team">Who We Are</a></li>
+            <li><a href="#visit">Find Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#shop">Honey</a></li>
+            <li><a href="#shop">Honeycomb</a></li>
+            <li><a href="#shop">Beeswax</a></li>
+            <li><a href="#bees">Adopt a Hive</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="mailto:hello@cumberlandhoney.co.uk">Email us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2026</span> The Cumberland Honey Co. All rights reserved.</span>
+        <span>Honey should not be given to infants under 12 months.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.getElementById('site-nav');
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    nav.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open menu');
+      }
+    });
+
+    // Product filters
+    var filterButtons = document.querySelectorAll('.filter-bar button');
+    var products = document.querySelectorAll('.product');
+    filterButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var filter = btn.getAttribute('data-filter');
+        filterButtons.forEach(function (b) { b.setAttribute('aria-pressed', b === btn); });
+        products.forEach(function (p) {
+          var cats = p.getAttribute('data-category').split(' ');
+          p.hidden = !(filter === 'all' || cats.indexOf(filter) !== -1);
+        });
+      });
+    });
+
+    // "Order" buttons pre-select the product in the enquiry form
+    var interest = document.getElementById('interest');
+    document.querySelectorAll('[data-product]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        interest.value = link.getAttribute('data-product');
+      });
+    });
+
+    // Enquiry form: compose an email in the visitor's mail app
+    var BUSINESS_EMAIL = 'hello@cumberlandhoney.co.uk';
+    document.getElementById('contact').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var form = e.target;
+      if (!form.name.value.trim() || !form.email.checkValidity() || !form.email.value) {
+        alert('Please add your name and a valid email address.');
+        return;
+      }
+      var subject = 'Enquiry: ' + form.interest.value;
+      var body = form.message.value + '\n\n' + form.name.value + '\n' + form.email.value;
+      window.location.href = 'mailto:' + BUSINESS_EMAIL +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body);
+    });
+
+    // Newsletter: no mailing service connected yet, so send a sign-up email
+    document.getElementById('newsletter-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = document.getElementById('news-email').value;
+      window.location.href = 'mailto:' + BUSINESS_EMAIL +
+        '?subject=' + encodeURIComponent('Newsletter sign-up') +
+        '&body=' + encodeURIComponent('Please add ' + email + ' to your mailing list.');
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
